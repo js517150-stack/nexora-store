@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA — Smart Products. Better Life.</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;color:#0c1624;background:#f5f8fc}
+a{text-decoration:none;color:inherit}.top{background:#061526;color:#fff;padding:14px 5%;display:flex;align-items:center;gap:28px;position:sticky;top:0;z-index:10}
+.logo{font-size:29px;font-weight:900;letter-spacing:1px;color:#fff}.logo span{color:#168cff}.tag{font-size:11px;color:#b9c8d9;margin-top:2px}
+.search{flex:1;max-width:520px;display:flex;background:#fff;border-radius:10px;overflow:hidden}.search input{flex:1;border:0;padding:13px 16px;outline:0}.search button{border:0;background:#168cff;color:#fff;width:52px;font-size:18px}
+.icons{display:flex;gap:20px;font-size:14px}.nav{background:#091c30;color:white;padding:11px 5%;display:flex;gap:30px;align-items:center;font-size:14px}.nav a:hover{color:#168cff}
+.hero{margin:0 auto;max-width:1250px;min-height:430px;background:linear-gradient(110deg,#061526,#0b3155 55%,#061526);color:white;display:flex;align-items:center;padding:50px 6%;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:70px solid #168cff22;right:5%;top:-100px}.hero h1{font-size:54px;line-height:1.02;max-width:580px}.hero h1 span{color:#168cff}.hero p{margin:20px 0;color:#cbd7e5;max-width:520px;line-height:1.6}.btn{display:inline-block;background:#168cff;color:#fff;border:0;border-radius:9px;padding:13px 23px;font-weight:700;cursor:pointer}.hero .products{position:absolute;right:9%;bottom:35px;font-size:90px;letter-spacing:-25px;filter:drop-shadow(0 20px 25px #0008)}
+.wrap{max-width:1250px;margin:auto;padding:28px 5%}.features{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:12px;margin-top:-25px;position:relative;box-shadow:0 5px 25px #10243d12}.feature{padding:22px;text-align:center;border-right:1px solid #e5ebf2;font-weight:700}.feature small{display:block;color:#718096;font-weight:400;margin-top:5px}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:35px 0 18px}.section-title h2{font-size:25px}.categories{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}.cat{background:#fff;padding:18px 8px;border-radius:12px;text-align:center;box-shadow:0 2px 12px #10243d0b}.cat .emoji{font-size:35px}.cat p{font-size:13px;margin-top:10px;font-weight:600}
+.products-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.card{background:white;border-radius:12px;padding:13px;box-shadow:0 2px 15px #10243d12}.pic{height:170px;border-radius:9px;background:linear-gradient(145deg,#edf3f9,#fff);display:flex;align-items:center;justify-content:center;font-size:75px}.badge{display:inline-block;margin:10px 0 7px;background:#168cff;color:#fff;padding:4px 7px;border-radius:5px;font-size:10px;font-weight:bold}.card h3{font-size:14px;line-height:1.35;min-height:38px}.stars{color:#f59e0b;font-size:12px;margin:7px 0}.price{font-weight:800;font-size:18px}.old{text-decoration:line-through;color:#9aa7b5;font-size:12px;margin-left:5px}.add{width:100%;margin-top:10px}
+.deal{margin-top:35px;background:linear-gradient(100deg,#061526,#0b3155);color:#fff;border-radius:15px;padding:35px;display:flex;justify-content:space-between;align-items:center}.deal h2{font-size:30px}.deal p{color:#cbd7e5;margin-top:8px}
+footer{margin-top:45px;background:#061526;color:#d8e3ef;padding:40px 5%}.footergrid{max-width:1250px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}.footergrid h3{color:white;margin-bottom:13px}.footergrid p,.footergrid a{display:block;font-size:13px;line-height:2}.copy{text-align:center;margin-top:35px;border-top:1px solid #ffffff18;padding-top:20px;font-size:12px}
+@media(max-width:800px){.top{flex-wrap:wrap;gap:12px}.search{order:3;flex-basis:100%}.nav{overflow:auto;white-space:nowrap}.hero{min-height:390px;padding:35px 7%}.hero h1{font-size:40px}.hero .products{opacity:.3;right:0}.features{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(4,1fr)}.products-grid{grid-template-columns:repeat(2,1fr)}.footergrid{grid-template-columns:1fr 1fr}.icons{margin-left:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div><div class="logo"><span>N</span>EXORA</div><div class="tag">Smart Products. Better Life.</div></div>
+  <div class="search"><input id="search" placeholder="Search for products, brands and more..."><button onclick="searchProducts()">⌕</button></div>
+  <div class="icons"><span>♙ Account</span><span>🛒 Cart (<b id="cart">0</b>)</span></div>
+</header>
+<nav class="nav"><b>☰ All Categories</b><a href="#">Home</a><a href="#shop">Electronics</a><a href="#shop">Accessories</a><a href="#deals">Deals</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav>
+
+<section class="hero">
+  <div><small>WELCOME TO NEXORA</small><h1>Latest Gadgets.<br><span>Best Prices.</span></h1><p>Discover smart electronics, accessories and everyday gadgets at prices you'll love.</p><a class="btn" href="#shop">Shop Now →</a></div>
+  <div class="products">📱 🎧 ⌚</div>
+</section>
+
+<main class="wrap">
+<section class="features">
+  <div class="feature">🚚 Fast Delivery<small>Across India</small></div>
+  <div class="feature">🛡️ Secure Payments<small>UPI • COD • Cards</small></div>
+  <div class="feature">✓ Quality Products<small>Carefully selected</small></div>
+  <div class="feature">☎ 24/7 Support<small>We're here to help</small></div>
+</section>
+
+<div class="section-title"><h2>Shop by Category</h2><a href="#shop">View All →</a></div>
+<section class="categories">
+  <div class="cat"><div class="emoji">📱</div><p>Smartphones</p></div><div class="cat"><div class="emoji">💻</div><p>Laptops</p></div>
+  <div class="cat"><div class="emoji">🎧</div><p>Accessories</p></div><div class="cat"><div class="emoji">⌚</div><p>Smart Watches</p></div>
+  <div class="cat"><div class="emoji">🎵</div><p>Audio</p></div><div class="cat"><div class="emoji">🍳</div><p>Home Appliances</p></div>
+  <div class="cat"><div class="emoji">🎮</div><p>Gaming</p></div><div class="cat"><div class="emoji">📺</div><p>TV & Monitors</p></div>
+</section>
+
+<div id="shop" class="section-title"><h2>Featured Products</h2><a href="#">View All →</a></div>
+<section class="products-grid" id="products"></section>
+
+<section id="deals" class="deal"><div><h2>🪔 Diwali Special</h2><p>Celebrate with smart gadgets and special offers.</p></div><a class="btn" href="#shop">Shop Diwali Deals →</a></section>
+
+<section id="about" class="section-title"><h2>Why Choose Nexora?</h2></section>
+<section class="features">
+  <div class="feature">🔒 Genuine Products<small>Carefully selected</small></div>
+  <div class="feature">🏷️ Great Prices<small>Best deals & offers</small></div>
+  <div class="feature">🚚 Fast Delivery<small>Across India</small></div>
+  <div class="feature">↩ Easy Returns<small>Simple process</small></div>
+</section>
+</main>
+
+<footer id="contact"><div class="footergrid">
+  <div><div class="logo"><span>N</span>EXORA</div><p>Smart Products. Better Life.</p><p>Your destination for electronics, gadgets and useful everyday products.</p></div>
+  <div><h3>Quick Links</h3><a href="#">Home</a><a href="#shop">Shop</a><a href="#about">About Us</a><a href="#contact">Contact</a></div>
+  <div><h3>Categories</h3><a href="#shop">Mobiles</a><a href="#shop">Laptops</a><a href="#shop">Accessories</a><a href="#shop">Smart Watches</a></div>
+  <div><h3>Customer Care</h3><a href="#">Help Center</a><a href="#">Shipping Policy</a><a href="#">Return Policy</a><a href="#">Terms & Conditions</a></div>
+</div><div class="copy">© 2026 Nexora. All rights reserved.</div></footer>
+
+<script>
+const products=[
+["📱","Nexora Smart Phone X1","₹9,999","₹12,999"],
+["🎧","Nexora BassPods Pro","₹1,299","₹2,499"],
+["⌚","Nexora Smart Watch S8","₹1,999","₹3,999"],
+["💻","Nexora AirBook 15","₹39,990","₹49,990"],
+["🔊","Nexora Bluetooth Speaker","₹899","₹1,499"],
+["🎮","Nexora Gaming Controller","₹1,499","₹2,199"],
+["📷","Nexora Mini Action Cam","₹2,999","₹4,499"],
+["⌨️","Nexora RGB Keyboard","₹999","₹1,499"],
+["🖱️","Nexora Wireless Mouse","₹499","₹799"],
+["🔌","Nexora Fast Charger 33W","₹699","₹999"]
+];
+function render(list=products){document.getElementById("products").innerHTML=list.map((p,i)=>`<article class="card"><div class="pic">${p[0]}</div><span class="badge">${i%2?"TRENDING":"BEST SELLER"}</span><h3>${p[1]}</h3><div class="stars">★★★★★ <small>(4.${i+3})</small></div><div class="price">${p[2]} <span class="old">${p[3]}</span></div><button class="btn add" onclick="addCart()">Add to Cart</button></article>`).join("")}
+function addCart(){let c=Number(document.getElementById("cart").textContent)+1;document.getElementById("cart").textContent=c;alert("Product added to cart!");}
+function searchProducts(){const q=document.getElementById("search").value.toLowerCase();render(products.filter(p=>p[1].toLowerCase().includes(q)));document.getElementById("shop").scrollIntoView({behavior:"smooth"});}
+render();
+</script>
+</body>
+</html>
